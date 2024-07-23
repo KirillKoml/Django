@@ -1,0 +1,1 @@
+[{"model": "catalogapp.category", "pk": 2, "fields": {"name": "╤А╨░╨▒╨╛╤В╤Л", "description": "╤А╨░╨╖╨╜╤Л╨╡ ╨▓╨╕╨┤╤Л ╤А╨░╨▒╨╛╤В"}}, {"model": "catalogapp.product", "pk": 2, "fields": {"description": "╤З╨╕╤Б╤В╨║╨░ ╨╗╤О╨▒╨╛╨╣ ╤Б╨╗╨╛╨╢╨╜╨╛╤Б╤В╨╕", "name": "╤З╨╕╤Б╤В╨║╨░", "image": "", "category": 2, "price": 10000, "data_bd": null, "data_refresh": null}}]
