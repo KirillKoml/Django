@@ -1,13 +1,13 @@
 {% extends 'home.html' %}
-{% load tags_filter %}
+{% load tags %}
 {% block content %}
 <div class="container">
     <div class="row text-center">
         {% for product in products %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{{ products.image | media }}">
                 <div class="card-header">
+                    <img class="card-img-top" src="{{ products.image | media }}">
                     <h4 class="my-0 font-weight-normal">{{product.name}}</h4>
                 </div>
                 <div class="card-body">
