@@ -1,0 +1,28 @@
+{% extends 'catalogapp/home.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="row" method = "post" enctype="multipart/form-data">
+                <div class="crard">
+                    <div class="card-header">
+                        <h4>Добавление товара</h4>
+                    </div>
+                    <div class="card-body">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">
+                            {% if object %}
+                            Сохранить
+                            {% else %}
+                            Добавить
+                            {% endif %}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

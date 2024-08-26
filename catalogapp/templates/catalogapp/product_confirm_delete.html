@@ -1,0 +1,23 @@
+{% extends 'catalogapp/home.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="row" method = "post" enctype="multipart/form-data">
+                <div class="crard">
+                    <div class="card-header">
+                        <h4>Удаление товара</h4>
+                    </div>
+                    <h4 class="my-0 font-weight-normal">Деиствительно хотите удалить: {{object.name}}</h4>
+                    <div class="card-body">
+                        {% csrf_token %}
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Удалить</button>
+                        <a type="submit" class="btn btn-primary"href="{% url 'catalogapp:product_list'%}">Отменить</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

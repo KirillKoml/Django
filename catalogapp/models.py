@@ -66,10 +66,28 @@ class Product(models.Model):
         help_text="укажите дату изменения",
     )
 
+    views_counter = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Количество просмотров",
+        help_text="укажите количество просмотров товара",
+        blank=True,
+        null=True,
+   )
+
     class Mete:
         verbose_name = "Товар"
         verbose_description = "Товара"
         ordering = ["name", "description"]
+
+    def __str__(self):
+        return self.name
+
+class Contact(models.Model):
+    name = models.CharField(max_length=200, verbose_name="Имя")
+    email = models.EmailField(verbose_name="Электронная почта")
+    message = models.TextField(verbose_name="Сообщение")
+    data_send = models.DateTimeField(auto_now_add=True, verbose_name="Дата отправки")
+
 
     def __str__(self):
         return self.name
