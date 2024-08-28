@@ -1,0 +1,27 @@
+{% extends 'blog/blog.html' %}
+{% load tags %}
+{% block content %}
+<div class="row text-center">
+    {% for blog in object_list %}
+    <div class="col-3">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{ blog.heading }}</h4>
+            </div>
+            <div class="card-body">
+                <img src="{{ blog.preview | media }}" width="220" height="190">
+                <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                    <li>{{ blog.content }}</li>
+                    <li>{{ blog.author }}</li>
+                </ul>
+                <a class="p-2 btn btn-outline-primary" href="{% url 'blog:view' blog.pk %}">Посмотреть</a>
+                <a class="p-2 btn btn-outline-primary" href="{% url 'blog:edit' blog.pk %}">Редактировать</a>
+                <a class="p-2 btn btn-outline-primary" href="{% url 'blog:delete' blog.pk %}">Удалить</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <p>
+        <a class="p-2 btn btn-outline-primary" href="/blog/create/">Создать новую запись</a>
+    </p>
+{% endblock %}

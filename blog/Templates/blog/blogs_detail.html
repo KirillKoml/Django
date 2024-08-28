@@ -1,0 +1,25 @@
+{% extends 'blog/blog.html' %}
+{% load tags %}
+{% block content%}
+<div class="row text-center">
+    <div class="col-3">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{ object.heading }}({{ object.slug }})</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                    <li>{{ object.content }}</li>
+                    <li>{{ object.date_creation }}</li>
+                    {% if object.sign_of_publication %}
+                    <li>Опубликовано</li>
+                    {% else %}
+                    <li>Не опубликовано</li>
+                    {% endif %}
+                    <li>Просмотры: {{ object.number_of_views }}</li>
+                    <a class="p-3 btn btn-outline-primary" href="{% url 'blog:blog_list' %}">Назад</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
